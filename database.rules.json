@@ -1,0 +1,19 @@
+{
+    "rules": {
+        "chats": {
+            ".read": true,
+            ".write": "auth !== null"
+        },
+        "check": {
+            ".read": true,
+            ".write": false
+        },
+        "users": {
+            "$user_id": {
+                ".read": "$user_id === auth.uid",
+                ".write": false,
+                "profile": { ".read": true }
+            }
+        }
+    }
+}
